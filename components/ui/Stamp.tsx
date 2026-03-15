@@ -5,6 +5,7 @@ interface StampProps {
   opacity?: number;
   width?: number;
   height?: number;
+  fontSize?: number;
 }
 
 export default function Stamp({
@@ -14,6 +15,7 @@ export default function Stamp({
   opacity = 0.85,
   width = 300,
   height = 110,
+  fontSize = 28,
 }: StampProps) {
   return (
     <svg
@@ -54,7 +56,7 @@ export default function Stamp({
         y={height / 2 + 10}
         textAnchor="middle"
         fontFamily="'Courier Prime', 'Space Mono', monospace"
-        fontSize="34"
+        fontSize={fontSize}
         fontWeight="700"
         fill={colour}
         letterSpacing="6"

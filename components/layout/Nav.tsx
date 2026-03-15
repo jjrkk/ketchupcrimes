@@ -1,6 +1,6 @@
 export default function Nav() {
   return (
-    <nav className="w-full bg-crime-black border-b border-evidence-red/30 px-6 md:px-16 py-5 flex items-center justify-between">
+    <nav className="w-full bg-crime-black px-6 md:px-16 py-5 flex items-center justify-between" style={{ borderBottom: "1px solid rgba(204, 34, 0, 0.3)" }}>
       <span className="font-headline font-extrabold text-parchment text-2xl uppercase tracking-wider">
         KETCHUP CRIMES
       </span>

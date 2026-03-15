@@ -46,25 +46,26 @@ export default function Home() {
 
       {/* ── Hero ───────────────────────────────────────────── */}
       <section className="relative px-6 pt-20 pb-0 md:px-16 max-w-6xl mx-auto">
-        <div className="relative">
+        {/* Stamp — positioned relative to section, sits at top-right corner of headline block */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: [0.8, 1.05, 1.0] }}
+          transition={{ delay: 0.6, duration: 0.45, times: [0, 0.6, 1] }}
+          className="absolute top-12 right-6 md:right-16 hidden sm:block"
+        >
+          <Stamp text="COMING SOON" rotation={-3} />
+        </motion.div>
+
+        <div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="font-headline font-extrabold text-parchment uppercase leading-none text-5xl sm:text-7xl md:text-8xl"
+            className="font-headline font-extrabold text-parchment uppercase leading-none text-5xl sm:text-6xl md:text-7xl"
           >
             THE INVESTIGATION<br />IS UNDERWAY.
           </motion.h1>
 
-          {/* Rubber stamp — overlaps headline top-right */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: [0.8, 1.05, 1.0] }}
-            transition={{ delay: 0.6, duration: 0.45, times: [0, 0.6, 1] }}
-            className="absolute -top-6 right-0 md:right-4 hidden sm:block"
-          >
-            <Stamp text="COMING SOON" rotation={-3} />
-          </motion.div>
           {/* Mobile stamp — below headline, inline */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -72,7 +73,7 @@ export default function Home() {
             transition={{ delay: 0.6, duration: 0.45, times: [0, 0.6, 1] }}
             className="mt-4 sm:hidden"
           >
-            <Stamp text="COMING SOON" rotation={-2} width={240} height={88} />
+            <Stamp text="COMING SOON" rotation={-2} width={240} height={88} fontSize={18} />
           </motion.div>
         </div>
 
@@ -170,8 +171,13 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.6 + i * 0.1, duration: 0.4 }}
-              className="relative bg-parchment border-2 border-crime-black p-4"
+              className="relative bg-parchment p-4"
+              style={{ border: "1px solid rgba(245, 240, 232, 0.2)" }}
             >
+              {/* Bureau label */}
+              <p className="font-label text-muted-gray tracking-[0.08em] mb-1" style={{ fontSize: "9px" }}>
+                BUREAU OF KETCHUP ENFORCEMENT
+              </p>
               {/* Case number */}
               <p className="font-label text-xs text-crime-black/50 mb-3 tracking-[0.08em]">
                 {product.id}
@@ -179,7 +185,7 @@ export default function Home() {
               {/* Placeholder image area */}
               <div className="bg-muted-gray/25 w-full aspect-square mb-4" />
               {/* Product name */}
-              <p className="font-document text-crime-black text-sm font-bold leading-snug">
+              <p className="font-document text-crime-black text-sm font-bold leading-snug" style={{ fontFamily: "'Courier Prime', monospace" }}>
                 {product.name}
               </p>
               {/* "UNDER REVIEW" stamp overlay */}

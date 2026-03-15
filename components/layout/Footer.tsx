@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
     <footer className="border-t border-evidence-red w-full px-6 md:px-16 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 mt-8">
-      <p className="font-label text-muted-gray text-xs tracking-[0.08em]">
-        BUREAU OF KETCHUP ENFORCEMENT © 2026. ALL CRIMES DOCUMENTED.
-      </p>
+      <span className="font-headline font-extrabold text-parchment text-xl uppercase tracking-wider">
+        BKE
+      </span>
       <div className="flex gap-5">
         <a
           href="https://instagram.com/theketchupcrimes"
