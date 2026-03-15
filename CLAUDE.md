@@ -177,7 +177,7 @@ NEXT_PUBLIC_SITE_URL=https://ketchupcrimes.com
 | Phase | Status | Description |
 |---|---|---|
 | 0 | Done | Domain, social handles, brand direction |
-| 1 | Active | Coming soon landing page |
+| 1 | Done | Coming soon landing page + Mailchimp email capture |
 | 2 | Backlog | First 10 designs + Printify products |
 | 3 | Backlog | Full storefront build |
 | 4 | Backlog | Social foundation (IG + TikTok) |
@@ -203,3 +203,9 @@ NEXT_PUBLIC_SITE_URL=https://ketchupcrimes.com
 _Update this section at the start of each session with what you're working on._
 
 Session 1: Building coming soon landing page (Phase 1).
+
+Phase 1 complete. Coming soon page live at ketchupcrimes.com.
+
+Mailchimp integrated for email capture via API.
+
+Next session: first designs — Ideogram + Claude Code SVG typography.

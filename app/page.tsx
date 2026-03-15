@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
@@ -8,9 +9,9 @@ import CrimeTape from "@/components/ui/CrimeTape";
 import Stamp from "@/components/ui/Stamp";
 
 const PRODUCTS = [
-  { id: "EXH-001", name: "Exhibit A — The Classic Tee", caseFile: "KC-2026-001" },
-  { id: "EXH-002", name: "Case File Mug", caseFile: "KC-2026-002" },
-  { id: "EXH-003", name: "Evidence Sticker Pack", caseFile: "KC-2026-003" },
+  { id: "EXH-001", name: "Exhibit A — The Classic Tee", image: "/images/designs/ketchup-is-a-crime.jpeg" },
+  { id: "EXH-002", name: "Case File Mug", image: "/images/designs/evidence-label.jpeg" },
+  { id: "EXH-003", name: "Evidence Sticker Pack", image: "/images/designs/wanted-heinz.jpeg" },
 ];
 
 export default function Home() {
@@ -182,24 +183,20 @@ export default function Home() {
               <p className="font-label text-xs text-crime-black/50 mb-3 tracking-[0.08em]">
                 {product.id}
               </p>
-              {/* Placeholder image area */}
-              <div className="bg-muted-gray/25 w-full aspect-square mb-4" />
+              {/* Product image */}
+              <div className="relative w-full aspect-square mb-4 overflow-hidden">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
               {/* Product name */}
               <p className="font-document text-crime-black text-sm font-bold leading-snug" style={{ fontFamily: "'Courier Prime', monospace" }}>
                 {product.name}
               </p>
-              {/* "UNDER REVIEW" stamp overlay */}
-              <div
-                className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                aria-hidden="true"
-              >
-                <span
-                  className="font-label text-crime-black/15 text-3xl font-bold tracking-widest uppercase"
-                  style={{ transform: "rotate(-12deg)" }}
-                >
-                  UNDER REVIEW
-                </span>
-              </div>
             </motion.div>
           ))}
         </div>
