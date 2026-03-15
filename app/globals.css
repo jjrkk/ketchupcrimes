@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-crime-black: #0A0A0A;
+  --color-parchment: #F5F0E8;
+  --color-evidence-red: #CC2200;
+  --color-tape-yellow: #F5C518;
+  --color-muted-gray: #888880;
+
+  --font-headline: var(--font-big-shoulders), sans-serif;
+  --font-document: var(--font-courier-prime), monospace;
+  --font-label: var(--font-space-mono), monospace;
+  --font-body: var(--font-special-elite), serif;
+}
+
+body {
+  background-color: #0A0A0A;
+  color: #F5F0E8;
+}
